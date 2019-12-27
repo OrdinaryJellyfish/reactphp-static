@@ -13,7 +13,7 @@ class StaticServer
             $filePath = $request->getUri()->getPath();
             $file = $path.$filePath;
 
-            if (file_exists($file)) {
+            if (file_exists($file) && !is_dir($file)) {
                 $fileExt = pathinfo($file, PATHINFO_EXTENSION);
                 $finfo = finfo_open(FILEINFO_MIME_TYPE);
                 $fileType = finfo_file($finfo, $file);
