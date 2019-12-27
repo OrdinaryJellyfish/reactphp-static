@@ -1,0 +1,21 @@
+{
+    "name": "ordinaryjellyfish/react-static",
+    "description": "A simple middleware for serving static files with ReactPHP",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Tristian Kelly",
+        "email": "tristian.kelly560@gmail.com",
+        "role": "Developer"
+      }
+    ],
+    "require": {
+      "react/http": "^0.8.5"
+    },
+    "autoload": {
+      "psr-4": {
+        "OrdinaryJellyfish\\ReactStatic\\": "src/"
+      }
+    }
+  }
