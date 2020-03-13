@@ -7,11 +7,21 @@ use React\Http\Response;
 
 class StaticServer
 {
-    public static function serve(string $path)
+    /**
+     * @var string
+     */
+    private $path;
+
+    public function __construct(string $path)
     {
-        return function (ServerRequestInterface $request, $next) use ($path) {
+        $this->path = $path;
+    }
+
+    public function __invoke()
+    {
+        return function (ServerRequestInterface $request, $next) {
             $filePath = $request->getUri()->getPath();
-            $file = $path.$filePath;
+            $file = $this->path.$filePath;
 
             if (file_exists($file)) {
                 $fileExt = pathinfo($file, PATHINFO_EXTENSION);

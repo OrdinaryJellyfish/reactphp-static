@@ -13,7 +13,7 @@ composer require ordinaryjellyfish/react-static
 Use it in your ReactPHP like a normal middleware, passing in your webroot:
 
 ```php
-OrdinaryJellyfish\ReactStatic\StaticServer::serve(__DIR__);
+new OrdinaryJellyfish\ReactStatic\StaticServer(__DIR__);
 ```
 
 The middleware will serve any static files if they exist. If a file does not exist for the requested path, the middleware will exit, letting you run the rest of your application.
